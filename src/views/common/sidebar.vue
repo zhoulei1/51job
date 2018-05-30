@@ -24,26 +24,56 @@
             return {
                 items: [
                    {
-                         icon: 'el-icon-setting',
+                         icon: 'el-icon-info',
                          index: '/home',
                          title: '首页'
                    },
                      {
                        icon: 'el-icon-menu',
-                       index:'',
+                       index:'1',
                        title: '用户管理',
                        subs: [
                            {
-                             index: '/users',
+                             index: '/admin',
                              title: '管理员列表'
                            },
                            {
-                             index: '/orgnization',
-                             title: '机构'
+                             index: '/users',
+                             title: '用户管理'
                            }
 
                          ]
-                    }
+                    },
+                   {
+                     icon: 'el-icon-setting',
+                     index:'2',
+                     title: '系统设置',
+                     subs: [
+                         {
+                           index: '/role',
+                           title: '角色管理'
+                         },
+                         {
+                           index: '/orgnization',
+                           title: '机构管理'
+                         }
+                       ]
+                  },
+                 {
+                   icon: 'el-icon-goods',
+                   index:'3',
+                   title: '账户管理',
+                   subs: [
+                       {
+                         index: '/charge',
+                         title: '账户充值'
+                       },
+                       {
+                         index: '/fetch',
+                         title: '账户提现'
+                       }
+                     ]
+                }
                 ]
             }
         },
@@ -51,7 +81,6 @@
         },
         computed: {
             onRoutes(){
-                console.log(this.$route.path);
                 return this.$route.path;
             }
         }
