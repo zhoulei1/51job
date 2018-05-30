@@ -46,10 +46,10 @@
     <!-- 添加机构 -->
    <el-dialog title="添加机构" :visible.sync="dialogFormVisible" width="30%" center>
       <el-form :model="addform" :rules="rules" ref="addform" label-width="100px" class="demo-ruleForm" label-position="right">
-        <el-form-item label="机构名">
+        <el-form-item label="机构名" prop="name">
           <el-input v-model="addform.name"></el-input>
         </el-form-item>
-         <el-form-item label="机构url">
+         <el-form-item label="机构url"  prop="avatarUrl">
           <el-input v-model="addform.avatarUrl"></el-input>
         </el-form-item>
       </el-form>

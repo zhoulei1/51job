@@ -49,11 +49,11 @@
     <!-- Form -->
    <el-dialog title="添加管理员" :visible.sync="dialogFormVisible" width="30%" center>
       <el-form :model="addform" :rules="rules" ref="addform" label-width="100px" class="demo-ruleForm" label-position="right">
-        <el-form-item label="用户名" prop="username">
-          <el-input v-model="addform.username"></el-input>
+        <el-form-item label="用户名" prop="bcname">
+          <el-input v-model="addform.bcname"></el-input>
         </el-form-item>
-         <el-form-item label="密码" prop="password">
-          <el-input v-model="addform.password" type="password" ></el-input>
+         <el-form-item label="密码" prop="pass">
+          <el-input v-model="addform.pass"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -79,16 +79,16 @@
         pageSize:10,
         dialogFormVisible: false,
         addform: {
-            username: '',
-            password: ''
+            bcname: '',
+            pass: ''
         },
         loading2: false,
         multipleSelection: [],
         rules: {
-          username: [
+          bcname: [
             { required: true, message: '请输入用户名', trigger: 'blur' }
           ],
-          password: [
+          pass: [
             { required: true, message: '请输入密码', trigger: 'blur' }
           ]
         }
@@ -144,8 +144,8 @@
                    url: this.$http.adornUrl(`/user/add`),
                    method: 'post',
                    data: this.$http.postparam({
-                   'username': this.addform.username ,
-                   'password': this.addform.password
+                   'username': this.addform.bcname ,
+                   'password': this.addform.pass
                    })
                  }).then(({data}) => {
                      if (data.success) {
