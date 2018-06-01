@@ -2,7 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 const Axios = axios.create({
-  timeout: 1000 * 30
+  timeout: 1000 * 60 * 3
 })
 const BASE_PATH = process.env.API_URL
 

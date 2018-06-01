@@ -35,12 +35,16 @@ export default new Router({
             component: resolve => require(['../views/user/admin.vue'], resolve)
         },
         {
-          path: '/role',
-            component: resolve => require(['../views/item/role.vue'], resolve)
+        path: '/enroll',
+          component: resolve => require(['../views/data/enroll.vue'], resolve)
         },
         {
-        path: '/charge',
-          component: resolve => require(['../views/bill/charge.vue'], resolve)
+          path: '/activity',
+            component: resolve => require(['../views/data/activity.vue'], resolve)
+        },
+      {
+        path: '/trade',
+           component: resolve => require(['../views/bill/trade.vue'], resolve)
         },
         {
           path: '/fetch',

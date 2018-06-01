@@ -50,10 +50,6 @@
                      title: '系统设置',
                      subs: [
                          {
-                           index: '/role',
-                           title: '角色管理'
-                         },
-                         {
                            index: '/orgnization',
                            title: '机构管理'
                          }
@@ -64,17 +60,28 @@
                    index:'3',
                    title: '账户管理',
                    subs: [
+                        {
+                          index: '/trade',
+                          title: '交易列表'
+                        }
+                     ]
+                },
+                 {
+                   icon: 'el-icon-document',
+                   index:'4',
+                   title: '数据统计',
+                   subs: [
                        {
-                         index: '/charge',
-                         title: '账户充值'
+                         index: '/activity',
+                         title: '活动列表'
                        },
                        {
-                         index: '/fetch',
-                         title: '账户提现'
+                         index: '/enroll',
+                         title: '活动报名'
                        }
                      ]
                 }
-                ]
+]
             }
         },
         beforeMount() {

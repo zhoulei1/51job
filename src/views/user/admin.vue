@@ -1,5 +1,5 @@
 <template>
-  <div id="users">
+  <div id="admin">
 
       <!-- 查询 -->
     <el-form :inline="true" :model="formInline" class="demo-form-inline">
@@ -16,7 +16,7 @@
       </div>
 
       <!-- 列表 -->
-    <el-table :data="tableData" style="width: 100%"   max-height="650" border v-loading="loading2" element-loading-text="拼命加载中"  @selection-change="handleSelectionChange">
+    <el-table :data="tableData" style="width: 100%"   max-height="700" border v-loading="loading2" element-loading-text="拼命加载中"  @selection-change="handleSelectionChange">
       <el-table-column type="selection"  fixed="left"></el-table-column>
       <el-table-column prop="id" label="id"></el-table-column>
       <el-table-column prop="username" label="用户名"></el-table-column>
@@ -107,7 +107,7 @@
           username: this.formInline.name
         };
         this.$http({
-            url: this.$http.adornUrl(`/user/list`),
+            url: this.$http.adornUrl(`/admin/list`),
             method: 'post',
             data: this.$http.postparam(params)
           }).then(function({data}){
@@ -141,7 +141,7 @@
         this.$refs[formName].validate((valid) => {
            if(valid){
               this.$http({
-                   url: this.$http.adornUrl(`/user/add`),
+                   url: this.$http.adornUrl(`/admin/add`),
                    method: 'post',
                    data: this.$http.postparam({
                    'username': this.addform.bcname ,
@@ -173,7 +173,7 @@
           type: 'warning'
         }).then(() => {
           this.$http({
-              url: this.$http.adornUrl(`/user/delete`),
+              url: this.$http.adornUrl(`/admin/delete`),
               method: 'post',
               data: this.$http.postparam({userid: rowdata.id})
             }).then(({data}) => {
@@ -209,7 +209,7 @@
           type: 'warning'
         }).then(() => {
           this.$http({
-              url: this.$http.adornUrl(`/user/batchdelete`),
+              url: this.$http.adornUrl(`/admin/batchdelete`),
               method: 'post',
               data: this.$http.postparam({userids:ids.join(',')})
             }).then(({data}) => {
